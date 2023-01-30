@@ -2,9 +2,9 @@ import Button from "../button/button";
 import TextArea from "../textarea/textarea";
 import styles from "./registration-form.module.css";
 
-interface SubmitData {
-  first: string;
-  last: string;
+interface User {
+  firstname: string;
+  lastname: string;
   email: string;
   message?: string;
 }
@@ -12,18 +12,29 @@ interface SubmitData {
 function RegistrationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data: SubmitData = {
-      first: event.target.first.value,
-      last: event.target.last.value,
-      email: event.target.email.value,
-      message: event.target.message.value,
-    };
-    console.log(data);
+    try {
+      const data: User = {
+        firstname: event.target.firstname.value,
+        lastname: event.target.lastname.value,
+        email: event.target.email.value,
+        message: event.target.message.value,
+      };
+      const response = await fetch("api/newuser", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <div className={styles.root}>
       <form onSubmit={handleSubmit}>
-        <label className={styles.label} htmlFor="first">
+        <label className={styles.label} htmlFor="firstname">
           First Name
         </label>
         <input
@@ -31,9 +42,9 @@ function RegistrationForm() {
           type="text"
           required
           name="firstname"
-          id="first"
+          id="firstname"
         />
-        <label className={styles.label} htmlFor="last">
+        <label className={styles.label} htmlFor="lastname">
           Last Name
         </label>
         <input
@@ -41,7 +52,7 @@ function RegistrationForm() {
           type="text"
           required
           name="lastname"
-          id="last"
+          id="lastname"
         />
         <label className={styles.label} htmlFor="email">
           Email
