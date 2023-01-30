@@ -3,7 +3,8 @@ CREATE TABLE "User" (
     "firstname" TEXT NOT NULL,
     "lastname" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "message" TEXT NOT NULL
+    "message" TEXT,
+    "title" TEXT
 );
 
 -- CreateIndex
