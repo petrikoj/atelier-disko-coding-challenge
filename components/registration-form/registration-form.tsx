@@ -9,6 +9,7 @@ interface User {
   lastname: string;
   email: string;
   message?: string;
+  title?: string;
 }
 
 function RegistrationForm() {
@@ -20,6 +21,7 @@ function RegistrationForm() {
         firstname: event.target.firstname.value,
         lastname: event.target.lastname.value,
         email: event.target.email.value,
+        title: event.target.title.value,
         message: event.target.message.value,
       };
       const response = await fetch("api/newuser", {
@@ -71,6 +73,15 @@ function RegistrationForm() {
           name="email"
           id="email"
         />
+        <label className={styles.label} htmlFor="title">
+          Title?
+        </label>
+        <select className={styles.select} name="title" id="title">
+          <option value="">--</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Prof.">Prof.</option>
+          <option value="Prof. Dr.">Prof Dr.</option>
+        </select>
         <label className={styles.input} htmlFor="message">
           <TextArea />
         </label>
