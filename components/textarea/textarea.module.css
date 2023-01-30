@@ -8,17 +8,17 @@
     font-family: "body";
 }
 
-.counterGreen {
-    color: green;
+.counter {
+    color: gray;
     font-weight: 100;
     font-size: smaller;
     padding: 0.25rem;
     text-align: right;
 }
 
-.counterRed {
+.counterWarning {
     color: red;
-    font-weight: 100;
+    font-weight: 300;
     font-size: smaller;
     padding: 0.25rem;
     text-align: right;

@@ -19,14 +19,14 @@ function TextArea({ input }: TextAreaInput) {
         name="message"
         id="message"
         placeholder="Anything else we should know?"
-        maxLength="150"
+        maxLength="100"
         onChange={handleMessageHandler}
       >
         {input}
       </textarea>
       <div
         className={
-          messageText.length < 120 ? styles.counterGreen : styles.counterRed
+          messageText.length < 80 ? styles.counter : styles.counterWarning
         }
         id="counter"
       >
