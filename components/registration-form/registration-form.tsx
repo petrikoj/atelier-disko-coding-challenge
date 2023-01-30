@@ -4,7 +4,6 @@ import styles from "./registration-form.module.css";
 function RegistrationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const data = {
       first: event.target.first.value,
       last: event.target.last.value,
