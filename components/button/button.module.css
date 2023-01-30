@@ -8,9 +8,14 @@
     color: #fff;
     background-color: #0d26fc;
     border: 0.15rem solid #0d26fc;
-    border-radius:5%;
+    border-radius: 10rem;
     padding: 0.25rem;
     font-weight: bold;
+    font-size: medium;
+    text-transform: uppercase;
     letter-spacing: 1pt;
     margin: 5%;
+    width: 10rem;
+    height: auto;
+    text-align: center;
 }

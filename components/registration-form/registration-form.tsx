@@ -1,13 +1,22 @@
 import Button from "../button/button";
+import TextArea from "../textarea/textarea";
 import styles from "./registration-form.module.css";
+
+interface SubmitData {
+  first: string;
+  last: string;
+  email: string;
+  message?: string;
+}
 
 function RegistrationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = {
+    const data: SubmitData = {
       first: event.target.first.value,
       last: event.target.last.value,
       email: event.target.email.value,
+      message: event.target.message.value,
     };
     console.log(data);
   };
@@ -44,6 +53,10 @@ function RegistrationForm() {
           name="email"
           id="email"
         />
+        <label className={styles.input} htmlFor="message">
+          <TextArea />
+        </label>
+
         <Button callToAction="Submit" type="submit" />
       </form>
     </div>
