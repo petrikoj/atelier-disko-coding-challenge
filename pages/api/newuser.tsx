@@ -10,11 +10,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
     res
-      .status(200)
+      .status(201)
       .json({ user: newUser, message: "User successfully created" });
     console.log("NEW USER --->", newUser);
   } catch (error) {
     console.log(error);
     res.status(403).json({ error: "Error while creating new user" });
+    return error;
   }
 };
