@@ -2,9 +2,19 @@ import Button from "../button/button";
 import styles from "./registration-form.module.css";
 
 function RegistrationForm() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      first: event.target.first.value,
+      last: event.target.last.value,
+      email: event.target.email.value,
+    };
+    console.log(data);
+  };
   return (
     <div className={styles.root}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className={styles.label} htmlFor="first">
           First Name
         </label>
