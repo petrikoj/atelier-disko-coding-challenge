@@ -1,6 +1,8 @@
 import Button from "../button/button";
 import TextArea from "../textarea/textarea";
 import styles from "./registration-form.module.css";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface User {
   firstname: string;
@@ -10,6 +12,7 @@ interface User {
 }
 
 function RegistrationForm() {
+  const router = useRouter();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -26,8 +29,12 @@ function RegistrationForm() {
       });
       const result = await response.json();
       console.log(result);
+      if (response.status === 201) {
+        router.push("/success");
+      }
     } catch (error) {
       console.log(error);
+      router.push("/error");
     }
   };
 

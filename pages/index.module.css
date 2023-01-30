@@ -1,3 +1,36 @@
 .main {
   flex: 1 0 auto;
 }
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #B9FFD1;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color:#0d26fc;
+  word-spacing: 1vw;
+}
+
+.error {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #f74b4b;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  word-break:normal;
+  font-weight: 900;
+  color: black;
+  word-spacing: 1vw;
+}
