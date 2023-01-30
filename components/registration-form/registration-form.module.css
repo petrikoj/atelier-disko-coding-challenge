@@ -1,0 +1,15 @@
+.root {
+    border: 1px solid black;
+    border-radius: 3%;
+    padding: 2rem;
+}
+
+.label {
+    font-weight: 300;
+    letter-spacing: 0.5pt;
+}
+
+.input {
+    margin-top: 0.45rem;
+    margin-bottom: 0.75rem;
+}

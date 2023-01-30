@@ -1,0 +1,16 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    color: #fff;
+    background-color: #0d26fc;
+    border: 0.15rem solid #0d26fc;
+    border-radius:5%;
+    padding: 0.25rem;
+    font-weight: bold;
+    letter-spacing: 1pt;
+    margin: 5%;
+}
