@@ -9,7 +9,7 @@ function Header() {
       <h1 className={typography.title400}>
         <strong>Atelier Disko</strong> Coding Challenge
       </h1>
-
+      <br />
       <h2 className={typography.title400}>Registration Form</h2>
     </header>
   );

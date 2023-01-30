@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header/header";
+import RegistrationForm from "../components/registration-form/registration-form";
 import styles from "./index.module.css";
 import layout from "../styles/layout.module.css";
 import typography from "../styles/typography.module.css";
@@ -20,17 +21,7 @@ const Home: NextPage = () => {
           <Header />
 
           <div className={cx(layout.container, layout.grid)}>
-            <div>This</div>
-            <div>is</div>
-            <div>a</div>
-            <div>sample</div>
-            <div>grid</div>
-            <div>with</div>
-            <div>twelve</div>
-            <div>columns</div>
-            <div>and</div>
-            <div>20px</div>
-            <div>gutter</div>
+            <RegistrationForm />
           </div>
         </main>
       </div>
