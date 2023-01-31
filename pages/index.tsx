@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header/header";
 import RegistrationForm from "../components/registration-form/registration-form";
-import styles from "./index.module.css";
+import styles from "../styles/index.module.css";
 import layout from "../styles/layout.module.css";
 import typography from "../styles/typography.module.css";
 import cx from "classix";
