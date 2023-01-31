@@ -1,11 +1,13 @@
-import useSWR from "swr";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import got from "got";
 
-export default function Users() {
-  const { data, error } = useSWR("/api/allusers", fetcher);
-  if (error) return <div>An error occured.</div>;
-  if (!data) return <div>Loading ...</div>;
-
+export async function getStaticProps() {
+  const url = `${process.env.NEXT_PUBLIC_SITE_HOST}`;
+  console.log(url);
+  const data = await got(url + "/api/allusers").json();
+  console.log("RESPONSE FROM GETSTATICPROPS", data);
+  return { props: { data } };
+}
+export default function Users({ data }) {
   return (
     <ul>
       {data.users.map((user) => (
