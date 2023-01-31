@@ -2,7 +2,6 @@ import Button from "../button/button";
 import TextArea from "../textarea/textarea";
 import styles from "./registration-form.module.css";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 interface User {
   firstname: string;
@@ -24,7 +23,8 @@ function RegistrationForm() {
         title: event.target.title.value,
         message: event.target.message.value,
       };
-      const response = await fetch("api/newuser", {
+
+      const response = await fetch("api/registrations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
