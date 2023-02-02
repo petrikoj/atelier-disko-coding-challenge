@@ -8,8 +8,9 @@ function Header() {
     <header className={cx(styles.root, layout.container)}>
       <h1 className={typography.title400}>
         <strong>Atelier Disko</strong> Coding Challenge
+        <br />
+        <br />
       </h1>
-      <br />
       <h2 className={typography.title400}>Registration Form</h2>
     </header>
   );
