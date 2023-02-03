@@ -1,6 +1,7 @@
 import { prisma } from "../../db";
 import { NextApiRequest, NextApiResponse } from "next";
 import Joi from "joi";
+import { Prisma } from "@prisma/client";
 
 type ResponseData = {
   message?: string;
@@ -9,11 +10,19 @@ type ResponseData = {
 };
 
 const requestData = Joi.object({
-  firstname: Joi.string().required(),
-  lastname: Joi.string().required(),
-  email: Joi.string().email().required(),
-  message: Joi.string().allow(""),
-  title: Joi.string().allow(""),
+  firstname: Joi.string()
+    .required()
+    .pattern(new RegExp("^[a-zA-Z-' ]+$"))
+    .min(1)
+    .max(36),
+  lastname: Joi.string()
+    .required()
+    .pattern(new RegExp("^[a-zA-Z-' ]+$"))
+    .min(1)
+    .max(36),
+  email: Joi.string().email().required().max(36),
+  message: Joi.string().allow("").max(100),
+  title: Joi.string().allow("")
 });
 
 export default async function handler(
@@ -28,23 +37,31 @@ export default async function handler(
         lastname: lastname,
         email: email,
         message: message,
-        title: title,
+        title: title
       });
       const newUser = await prisma.user.create({
         data: {
-          ...value,
-        },
+          ...value
+        }
       });
-      res
+      return res
         .status(201)
         .json({ user: newUser, message: "User successfully created" });
-      console.log("NEW USER --->", newUser);
     } catch (error) {
       console.log(error);
-      res.status(403).send({ message: "Error while creating new user" });
-      return error;
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        if (error.code === "P2002") {
+          return res
+            .status(409)
+            .send({
+              message:
+                "Email already exists in database. Please try a different one."
+            });
+        }
+      }
+      return res.status(403).send({ message: "Error while creating new user" });
     }
   } else {
-    res.status(405).send({ message: "HTTP request method not allowed" });
+    return res.status(405).send({ message: "HTTP request method not allowed" });
   }
 }
