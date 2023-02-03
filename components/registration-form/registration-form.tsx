@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { TextAreaInputCounter } from "../textarea/textarea_counter";
 
-interface User {
+export interface User {
   firstname: string;
   lastname: string;
   email: string;
@@ -32,13 +32,18 @@ function RegistrationForm() {
       const response = await fetch("api/registrations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       });
       const result = await response.json();
       console.log(result);
       if (response.status === 201) {
         router.push("/success");
       }
+      if (response.status === 409) {
+        result.message;
+      }
+      if (response.status === 403) alert(result.message);
+      if (response.status === 405) alert(result.message);
     } catch (error) {
       console.log(error);
       router.push("/error");
@@ -57,7 +62,9 @@ function RegistrationForm() {
           required
           name="firstname"
           id="firstname"
-          //pattern=""
+          pattern="^[a-zA-Z-' ]+$"
+          minLength={1}
+          maxLength={36}
         />
         <label className={styles.label} htmlFor="lastname">
           Last Name
@@ -68,7 +75,9 @@ function RegistrationForm() {
           required
           name="lastname"
           id="lastname"
-          //pattern:""
+          pattern="^[a-zA-Z-' ]+$"
+          minLength={1}
+          maxLength={36}
         />
         <label className={styles.label} htmlFor="email">
           Email
@@ -79,7 +88,8 @@ function RegistrationForm() {
           required
           name="email"
           id="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          //pattern="\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z"
+          maxLength={36}
         />
         <label className={styles.label} htmlFor="title">
           Title?
