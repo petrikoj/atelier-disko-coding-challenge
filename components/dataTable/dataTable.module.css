@@ -1,0 +1,27 @@
+.root {
+  margin: 2rem;
+  background-color: #0d26fc;
+  text-transform: uppercase;
+  font-size: large;
+  width: 40rem;
+  position: relative;
+}
+
+.theader {
+  padding: 0.5rem;
+  color: #fff;
+  line-height: 3rem;
+  font-size: larger;
+  text-align: center;
+}
+
+.trows {
+  color: #0d26fc;
+  background-color: #f2f2f2;
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.75rem;
+  line-height: 2rem;
+  font-size: large;
+}
