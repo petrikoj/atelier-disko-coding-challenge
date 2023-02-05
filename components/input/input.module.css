@@ -1,0 +1,17 @@
+.root {
+  margin-top: 0.45rem;
+  margin-bottom: 0.75rem;
+  width: 15rem;
+  height: auto;
+  font-size: medium;
+}
+
+.root:focus {
+  outline: none !important;
+  border: 3px solid #0d26fc;
+  margin-top: 0.45rem;
+  margin-bottom: 0.75rem;
+  width: 15rem;
+  height: auto;
+  font-size: medium;
+}
