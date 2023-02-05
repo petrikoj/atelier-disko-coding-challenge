@@ -20,7 +20,7 @@ type TableRowsProps<T, K extends keyof T> = {
 };
 
 function TableHeader<T, K extends keyof T>({
-  columns
+  columns,
 }: TableHeaderProps<T, K>) {
   const headers = columns.map((column, index) => {
     return (
@@ -39,7 +39,7 @@ function TableHeader<T, K extends keyof T>({
 
 function TableRows<T, K extends keyof T>({
   data,
-  columns
+  columns,
 }: TableRowsProps<T, K>) {
   const rows = data?.map((row, index) => {
     return (
@@ -60,7 +60,7 @@ function TableRows<T, K extends keyof T>({
 
 export default function Table<T, K extends keyof T>({
   data,
-  columns
+  columns,
 }: TableProps<T, K>) {
   return (
     <table className={styles.root}>
