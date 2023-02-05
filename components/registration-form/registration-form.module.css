@@ -1,10 +1,10 @@
 .root {
-    border: 1px solid black;
-    border-radius: 3%;
-    padding: 2rem;
+  border: 1px solid black;
+  border-radius: 3%;
+  padding: 2rem;
 }
 
-.label {
+/* .label {
     font-weight: 300;
     letter-spacing: 0.5pt;
 }
@@ -15,10 +15,10 @@
     width: 15rem;
     height: auto;
     font-size: medium;
-}
+} */
 
 .select {
-    margin-left: 0.5rem;
-    margin-top: 0.45rem;
-    margin-bottom: 0.75rem;
+  margin-left: 0.5rem;
+  margin-top: 0.45rem;
+  margin-bottom: 0.75rem;
 }
