@@ -4,6 +4,8 @@ import styles from "./registration-form.module.css";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { TextAreaInputCounter } from "../textarea/textarea_counter";
+import Input from "../input/input";
+import Label from "../label/label";
 
 export interface User {
   firstname: string;
@@ -32,7 +34,7 @@ function RegistrationForm() {
       const response = await fetch("api/registrations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
       const result = await response.json();
       console.log(result);
@@ -53,37 +55,28 @@ function RegistrationForm() {
   return (
     <div className={styles.root}>
       <form onSubmit={handleSubmit}>
-        <label className={styles.label} htmlFor="firstname">
-          First Name
-        </label>
-        <input
-          className={styles.input}
-          type="text"
+        <Label htmlFor="firstname" title="First Name" />
+        <Input
           required
+          type="text"
           name="firstname"
           id="firstname"
           pattern="^[a-zA-Z-' ]+$"
           minLength={1}
           maxLength={36}
         />
-        <label className={styles.label} htmlFor="lastname">
-          Last Name
-        </label>
-        <input
-          className={styles.input}
-          type="text"
+        <Label htmlFor="lastname" title="Last Name" />
+        <Input
           required
+          type="text"
           name="lastname"
           id="lastname"
           pattern="^[a-zA-Z-' ]+$"
           minLength={1}
           maxLength={36}
         />
-        <label className={styles.label} htmlFor="email">
-          Email
-        </label>
-        <input
-          className={styles.input}
+        <Label htmlFor="email" title="Email" />
+        <Input
           type="email"
           required
           name="email"
@@ -91,9 +84,7 @@ function RegistrationForm() {
           //pattern="\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z"
           maxLength={36}
         />
-        <label className={styles.label} htmlFor="title">
-          Title?
-        </label>
+        <Label htmlFor="title" title="Title?" />
         <select className={styles.select} name="title" id="title">
           <option value="">--</option>
           <option value="Dr.">Dr.</option>
