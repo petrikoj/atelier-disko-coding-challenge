@@ -1,6 +1,6 @@
 import styles from "./textarea.module.css";
 
-type InputCounterProps = {
+export type InputCounterProps = {
   currentValue: number;
   maxValue: number;
   thresholdValue: number;

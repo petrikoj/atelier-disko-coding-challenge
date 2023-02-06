@@ -2,7 +2,7 @@ import Button from "../button/button";
 import TextArea from "../textarea/textarea";
 import styles from "./registration-form.module.css";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React from "react";
 import { TextAreaInputCounter } from "../textarea/textarea_counter";
 import Input from "../input/input";
 import Label from "../label/label";
@@ -53,8 +53,8 @@ function RegistrationForm() {
   };
 
   return (
-    <div className={styles.root}>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
+      <div className={styles.root}>
         <Label htmlFor="firstname" title="First Name" />
         <Input
           required
@@ -91,25 +91,24 @@ function RegistrationForm() {
           <option value="Prof.">Prof.</option>
           <option value="Prof. Dr.">Prof Dr.</option>
         </select>
-        <label className={styles.input} htmlFor="message">
-          <TextArea
-            onChange={handleMessageHandler}
-            value={messageText}
-            maxLength={100}
-            name="message"
-            id="message"
-            placeholder="Anything else we should know?"
-          />
-          <TextAreaInputCounter
-            currentValue={messageText.length}
-            thresholdValue={80}
-            maxValue={100}
-          />
-        </label>
+        <Label htmlFor="message" title="Additional Information" />
+        <TextArea
+          onChange={handleMessageHandler}
+          value={messageText}
+          maxLength={100}
+          name="message"
+          id="message"
+          placeholder="Anything else we should know?"
+        />
+        <TextAreaInputCounter
+          currentValue={messageText.length}
+          thresholdValue={80}
+          maxValue={100}
+        />
 
         <Button type="submit">Submit</Button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }
 
