@@ -1,25 +1,33 @@
 .root {
-    resize: vertical;
-    width: 15rem;
-    height: 7.5rem;
-    line-height: 1.1rem;
-    margin-top: 0.45rem;
-    text-align: left;
-    font-family: "body";
+  resize: vertical;
+  width: 15rem;
+  height: 7.5rem;
+  line-height: 1.1rem;
+  margin-top: 0.45rem;
+  text-align: left;
+  font-size: medium;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.root:focus {
+  outline: none !important;
+  border: 2px solid #1a1a1a;
+  background-color: #d8d8d8;
 }
 
 .counter {
-    color: gray;
-    font-weight: 100;
-    font-size: smaller;
-    padding: 0.25rem;
-    text-align: right;
+  color: #fff;
+  font-weight: 200;
+  font-size: smaller;
+  padding: 0.25rem;
+  text-align: right;
 }
 
 .counterWarning {
-    color: red;
-    font-weight: 300;
-    font-size: smaller;
-    padding: 0.25rem;
-    text-align: right;
+  color: #fb4e33;
+  font-weight: bold;
+  font-size: smaller;
+  padding: 0.25rem;
+  text-align: right;
 }

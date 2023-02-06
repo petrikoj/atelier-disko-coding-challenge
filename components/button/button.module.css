@@ -1,21 +1,21 @@
 .root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
-    color: #fff;
-    background-color: #0d26fc;
-    border: 0.15rem solid #0d26fc;
-    border-radius: 10rem;
-    padding: 0.25rem;
-    font-weight: bold;
-    font-size: medium;
-    text-transform: uppercase;
-    letter-spacing: 1pt;
-    margin: 5%;
-    width: 10rem;
-    height: auto;
-    text-align: center;
+  color: #1a1a1a;
+  background-color: #fff7a5;
+  border-radius: 10rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  font-size: medium;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  margin: 5%;
+  width: auto;
+  height: 2.75rem;
+  text-align: center;
 }

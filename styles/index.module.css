@@ -1,5 +1,14 @@
 .main {
-  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .success {
@@ -7,19 +16,19 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: #B9FFD1;
+  background-color: #b9ffd1;
   height: 100vh;
   width: 100vw;
   text-align: center;
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 900;
-  color:#0d26fc;
+  color: #0d26fc;
   word-spacing: 1vw;
 }
 
 .error {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -29,7 +38,7 @@ display: flex;
   text-align: center;
   font-size: 3rem;
   text-transform: uppercase;
-  word-break:normal;
+  word-break: normal;
   font-weight: 900;
   color: black;
   word-spacing: 1vw;

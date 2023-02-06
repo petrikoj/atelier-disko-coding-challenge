@@ -8,10 +8,7 @@
 
 .root:focus {
   outline: none !important;
-  border: 3px solid #0d26fc;
-  margin-top: 0.45rem;
-  margin-bottom: 0.75rem;
-  width: 15rem;
-  height: auto;
-  font-size: medium;
+  border: 0.15rem solid #1a1a1a;
+  border: 2px solid;
+  background-color: #d8d8d8;
 }
