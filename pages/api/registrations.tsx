@@ -22,13 +22,16 @@ const requestData = Joi.object({
     .max(36),
   email: Joi.string().email().required().max(36),
   message: Joi.string().allow("").max(100),
-  title: Joi.string().allow("")
+  title: Joi.string().allow(""),
 });
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
+  if (req.method !== "POST") {
+    return res.status(405).send({ message: "HTTP request method not allowed" });
+  }
   if (req.method === "POST") {
     try {
       const { firstname, lastname, email, message, title } = req.body;
@@ -37,12 +40,12 @@ export default async function handler(
         lastname: lastname,
         email: email,
         message: message,
-        title: title
+        title: title,
       });
       const newUser = await prisma.user.create({
         data: {
-          ...value
-        }
+          ...value,
+        },
       });
       return res
         .status(201)
@@ -51,17 +54,13 @@ export default async function handler(
       console.log(error);
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         if (error.code === "P2002") {
-          return res
-            .status(409)
-            .send({
-              message:
-                "Email already exists in database. Please try a different one."
-            });
+          return res.status(409).send({
+            message:
+              "Email already exists in database. Please try a different one.",
+          });
         }
       }
       return res.status(403).send({ message: "Error while creating new user" });
     }
-  } else {
-    return res.status(405).send({ message: "HTTP request method not allowed" });
   }
 }
