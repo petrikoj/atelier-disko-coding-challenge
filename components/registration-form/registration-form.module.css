@@ -1,21 +1,12 @@
 .root {
-  border: 1px solid black;
-  border-radius: 3%;
+  background-color: #0d26fc;
+  border-radius: 1%;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
 }
-
-/* .label {
-    font-weight: 300;
-    letter-spacing: 0.5pt;
-}
-
-.input {
-    margin-top: 0.45rem;
-    margin-bottom: 0.75rem;
-    width: 15rem;
-    height: auto;
-    font-size: medium;
-} */
 
 .select {
   margin-left: 0.5rem;
