@@ -1,9 +1,10 @@
 import { User } from "@prisma/client";
 import got from "got";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import Table, {
   ColumnDefinitionType,
 } from "../../components/dataTable/dataTable";
+import Header from "../../components/header/header";
 
 export interface ApiResponse {
   data: {
@@ -25,7 +26,12 @@ const Users = ({ data }: ApiResponse) => {
     { key: "firstname", header: "First name" },
     { key: "lastname", header: "Last name" },
   ];
-  return <Table data={data.users} columns={columns} />;
+  return (
+    <>
+      <Header pageName="Registrations" />
+      <Table data={data.users} columns={columns} />
+    </>
+  );
 };
 
 export default Users;
