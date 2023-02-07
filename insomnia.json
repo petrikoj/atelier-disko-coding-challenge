@@ -1,0 +1,112 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-02-07T14:09:20.998Z",
+  "__export_source": "insomnia.desktop.app:v2022.7.5",
+  "resources": [
+    {
+      "_id": "req_e842a666fd204dfeae75a9936121969a",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675778517504,
+      "created": 1675778205944,
+      "url": "http://127.0.0.1:3000/api/registrations",
+      "name": "NEW USER",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"firstname\": \"string\",\n\t\"lastname\": \"string\",\n\t\"email\": \"string@string.de\",\n\t\"message\": \"string opt.\",\n\t\"title\": \"string opt.\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {},
+      "metaSortKey": -1675778205944,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "parentId": null,
+      "modified": 1675778894686,
+      "created": 1675704765420,
+      "name": "New Document",
+      "description": "**/allusers**: GET route that requires authentication through a bearer token passed in headers. It returns a collection of all users who have signed up.\n**/newuser**: POST route to sign up a new user. For an OK response the input data need to pass a validation schema.",
+      "scope": "design",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_f290ca77f19b4dbbbcc88a7f9c7cae15",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675778191797,
+      "created": 1675704765428,
+      "url": "http://127.0.0.1:3000/api/allusers",
+      "name": "ALL USERS",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "prefix": "Bearer",
+        "token": "isThisThingOn",
+        "disabled": false
+      },
+      "metaSortKey": -1675704765428,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_75b56a0ed07caa20c93fd44e47477bf03ca2ad59",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675704765424,
+      "created": 1675704765424,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1675704765424,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_75b56a0ed07caa20c93fd44e47477bf03ca2ad59",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675704765426,
+      "created": 1675704765426,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_c049922a36e6487bafc872ed805be51f",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675778537287,
+      "created": 1675704765421,
+      "fileName": "AD_CODING_CHALLENGE",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "uts_ee7523bfdba9471fb046b4d204b2f767",
+      "parentId": "wrk_d5f2c753b61049a4af226c608c7a9b99",
+      "modified": 1675704765430,
+      "created": 1675704765430,
+      "name": "Example Test Suite",
+      "_type": "unit_test_suite"
+    }
+  ]
+}
