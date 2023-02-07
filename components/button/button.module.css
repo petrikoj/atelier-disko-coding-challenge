@@ -7,15 +7,14 @@
 .button {
   color: #1a1a1a;
   background-color: #fff7a5;
-  border-radius: 10rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  border: 2px solid #1a1a1a;
+  padding: 0 2rem 0 2rem;
   font-weight: bold;
   font-size: medium;
   text-transform: uppercase;
   letter-spacing: 1pt;
   margin: 5%;
-  width: auto;
+  width: 10rem;
   height: 2.75rem;
   text-align: center;
 }

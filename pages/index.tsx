@@ -1,11 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header/header";
-import RegistrationForm from "../components/registration-form/registration-form";
 import styles from "../styles/index.module.css";
-import layout from "../styles/layout.module.css";
-import typography from "../styles/typography.module.css";
-import cx from "classix";
 import Link from "next/link";
 import Button from "../components/button/button";
 
@@ -20,11 +16,15 @@ const Home: NextPage = () => {
       <main>
         <Header pageName="Welcome!" />
         <div className={styles.ctas}>
-          <Link href="/signup">
-            <Button>Sign up</Button>
+          <Link href="/signup" passHref>
+            <a>
+              <Button>Sign up</Button>
+            </a>
           </Link>
-          <Link href="/registration/all">
-            <Button>Users</Button>
+          <Link href="/registration/all" passHref>
+            <a>
+              <Button>Users</Button>
+            </a>
           </Link>
         </div>
       </main>
